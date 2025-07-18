@@ -5,7 +5,7 @@ A tutorial for getting started with unit testing in R using the ```testthat``` a
 ## Overview
 This repository provides a hands-on introduction to unit testing in R, covering both traditional R function testing with ```testthat``` and Shiny application testing with ```shinytest2```. Through practical examples, you'll learn how to write, organize, and run tests to ensure your R code is reliable and maintainable.
 
-## Useage
+## Usage
 The main tutorial document ```R_unit_testing.qmd``` provides a comprehensive walkthrough of the testing process from initializing testthat and shinytest2 to creating and running tests. 
 
 The Shiny App ```app.R``` is a simple application that generates an identity matrix based on a single numeric input. The example function ```identity_matrix.R``` is located in the ```R/``` subfolder and is simply a wrapper for the ```diag()``` function.
