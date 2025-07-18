@@ -1,0 +1,64 @@
+---
+title: "Unit testing using testthat and shinytest2 packages"
+format: html
+---
+
+## Why test?
+
+-   Ensure code reliability
+
+-   Facilitate refactoring
+
+-   Catch bugs early
+
+-   Streamline testing workflow
+
+## Testing packages
+
+1.  `testthat`
+    -   Provides a framework for unit testing in R
+    -   Integrates with devtools and usethis packages
+2.  `shinytest2`
+    -   Allows you to write automated tests that simulate user interactions
+    -   Allows you to open the app in a testing environment and record tests
+    -   Integrates seamlessly with testthat
+
+## Getting started with testthat
+
+To get started with `testthat`, you need to initialize it in your R project or package.
+
+```{r}
+library(testthat)
+library(shinytest2)
+
+usethis::use_testthat()
+```
+
+Create a test file for a function, for example, `identity_matrix()`:
+
+```{r}
+source("R/identity_matrix.R")
+usethis::use_test("identity_matrix")
+```
+
+Run tests
+
+```{r}
+testthat::test_dir("tests/testthat")
+```
+
+`testthat` is integrated into devtools, so if you are building an R package the unit tests will run through `devtools::test()` or `devtools::check()`.
+
+## Shinytest2
+
+Initialize `shinytest2` in your R project or package.
+
+```{r}
+shinytest2::use_shinytest2()
+```
+
+Interactively generate test for shiny app.
+
+```{r}
+shinytest2::record_test()
+```
